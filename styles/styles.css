@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+}
+/*=========================================
+                Variable Fonts
+===========================================*/
+
+.var {
+  font-family: "Roboto", sans-serif;
+}
+
+.var h2 {
+  font-size: 42px;
+  font-weight: 100px;
+  font-variation-settings: "wdth" 100;
+  transition: all 3s;
+}
+
+.var h2:hover {
+  font-weight: 900;
+  font-variation-settings: "wdth" 200;
+}
+.var p {
+  font-weight: 350px;
+}
+
+/*=========================================
+                Variable Fonts
+===========================================*/
+
+.wrap p {
+  margin-bottom: 1em;
+}
+.wrap p:nth-of-type(1) {
+  text-wrap: balance;
+} /* this is comutationally heavy - so use it sparingly */
+
+.wrap p:nth-of-type(2) {
+  text-wrap: pretty;
+} /* prevent orphans*/
+
+.wrap p:nth-of-type(3) {
+  text-wrap: stable;
+} /* supposedly keeps editable text from rebalancing to much*/
+
+.wrap p:nth-of-type(4) {
+  text-wrap: pretty;
+} /* prevent orphans*/
+
+/*=========================================
+                CLAMP
+===========================================*/
+
+.clp h2 {
+  font-size: 6vw;
+}
+.clp h3 {
+  font-size: clamp(24px, 6vw, 48px);
+  /* clamp needs three values:
+    the min size
+    the responsive size
+    the max size
+    a good responsive text size */
+}
+
+.textbox article {
+  border-top: 1split solid red;
+  margin-bottom: 1em;
+}
+
+.textbox img {
+  float: left;
+}
+
+.textbox h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 36px;
+  font-weight: 550;
+  font-variation-settings: "wdth" 150;
+}
+
+/* Use textbox trim and textbox edge to remove default space around the font */
+.textbox article:nth-of-type(1) h2 {
+  /* Use textbox trim and textbox edge to remove default space around the font */
+  text-box-trim: trim-start;
+  text-box-edge: cap text;
+  /* text-box-edge requires two value for top and bottom and the bottom
+  the top can be :
+  cap: trims to the height of the capital letters
+  ex: trims to the height of the lower case x 
+  text: default spacing
+  the bottom can be:
+  alphabetic: trims to the baseline of the text
+  (cuts off descenders on g or y)
+  text: default spacing*/
+}
